@@ -90,3 +90,47 @@ git checkout -- <nombredelarchivo> # Regresa a la ultima version funcional del a
 
 ## Git history y logs
 
+```bash
+git log --oneline --graph --decorate --all # Opciones del log
+git config --global alias.hist "log --oneline --graph --decorate --all" # Crear un alias llamado hist con las opciones anteriores
+git config --global --list # Comprobar el alias listando la configuracion
+git hist # El alias que creamos.
+git hist -- <nombredelarchivo> # Igual a git log --oneline --graph --decorate --all -- <nombredelarchivo>
+```
+
+## Renombrar archivos y borrar archivos
+
+Renombrar archivos
+
+```bash
+git mv <nombreoriginal> <nombrenuevo> # cambiar nombre del archivo. Aun falta hacer commits.
+git commit -m "mensaje" # Cambio de nombre de archivo reflejado en el repositorio.
+```
+
+Eliminar archivos
+
+```bash
+git rm <nombredelarchivo> # Elimina el archivo. Falta commit.
+git commit -m "mensaje" # Eliminar el archivo del repositorio.
+```
+
+## Modificar archivos sin Git
+
+Si se modifica el nombre de un archivo.
+
+```bash
+git add -u # -u update, asi agarra el cambio en el stagin del cambio de nombre.
+git add -A # Agarra todos los cambios hechos en el repositorio. Falta hacer commit.
+git commit -m "mensaje" # Cambios reflejados en el repositorio.
+```
+
+## Excluyendo archivos
+
+Crear un archivo ".gitignore" y agregar un archivo o expresion por linea.
+Agregarlo al repositorio y commit.
+
+```bash
+git add .gitignore # Agregar el archivo .gitignore al repositorio.
+git commit -m "mensaje" # Reflejar el cambio en el repositorio.
+```
+
