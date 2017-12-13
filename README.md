@@ -244,3 +244,141 @@ Git reflog
 git reflog # Muestra todos los cambios. Incluso los reset.
 git reset --hard da843e6 # Regresamos al commit antes de los resets.
 ```
+
+## Github
+
+- Crear cuenta
+- Modificaciones basicas
+- Crear un repositorio en blanco
+
+Empujar nuestro proyecto demo local, al demo en github
+
+```bash
+git remote -v # Checar si tenemos repositorios remotos configurados. Default vacio.
+git remote add origin https://github.com/alehpineda/demo.git # Agregamos un nombre y la direccion del repositorio remoto.
+git push -u origin master # Empujamos el repositorio local al remoto. Ingresamos nuestras credenciales de github
+git push -u origin master --tags # Empujamos el repositorio local al remoto. Con todas las tags.
+```
+
+## Github con ssh
+
+Crear llave ssh
+
+```bash
+cd ~/.ssh # Cambiarnos de directorio al .shh
+mkdir ~/.ssh # Si no existe crear el directorio.
+ssh-keygen -t rsa -C "correodegithub" # Creara una llave publica y privada para entrar a github
+```
+
+Comunicarse con Github
+
+Abrimos el archivo id_rsa.pub con un editor que gustes. Copiamos la llave y la metemos en nuestro perfil de github, sin el correo.
+
+```bash
+ssh -T git@github.com # Si pusimos passphrase nos lo pedira. Si esta bien configurada la llave nos dara la bienvenida con nuestro usuario.
+```
+
+## Clonar un repositorio desde github
+
+Creamos un repositorio desde web, con readme, gitignore, y licencia.
+En la opcion de clonar, seleccionamos ssh.
+Copiamos la direccion 
+
+```bash
+git clone <nombre del repositorio> # clonamos el repositorio dentro de la carpeta.
+git clone <nombre del repositorio> <nombrecarpeta> # Si no te gusto el nombre de la carpeta, asi lo cambiamos.
+```
+
+## Subir archivos al repositorio.
+
+Metemos archivos al repositorio.
+
+```bash
+git status # Checar el status del repositorio
+git add . # Agregar los archivos al repositorio
+git status # Comparar al status anterior
+git commit -m "mensaje" # Commit los archivos de manera local.
+git push origin master # Empujamos el master local al origin en github
+git push # Push simple. Rama empujada, rama en remoto.
+```
+
+## Git Fetch vs Git Pull
+
+Editamos algo en el sitio. El index por ejemplo.
+
+Comparamos en terminal
+
+```bash
+git status # No muestra cambios. Porque es el local.
+```
+
+Modificamos el Readme local
+
+```bash
+code README.md # Modificar de manera local.
+git commit -am "Actualizar el README" # Flash commit.
+```
+
+Intentamos hacer un push
+
+```bash
+git push # Este falla y nos pide hacer un fetch.
+```
+
+Git fetch jala los cambios del remoto al local.
+Git pull jala los cambios del remoto al local y hace un merge. Es un comando destructivo.
+
+```bash
+git fetch # Jala los cambios.
+git status # Nos muestra que hay diferencias en las ramas origin/master y master
+git pull # Jalamos los cambios y hacemos un merge. Pueden ocurrir errores.
+git push # Empujamos los cambios hechos del local al remoto.
+```
+
+## Opciones en el repositorio remoto
+
+## Cambios en el repositorio remoto.
+
+Si el repositorio remoto cambia de nombre, hay que cambiar la direccion en el repositorio local.
+
+```bash
+git remote -v # Revisar la configuracion local del respositorio remoto.
+git remote set-url origin <direcciondelproyectoengithub> # Nueva direccion
+git remote show origin # Ver más info sobre el repositorio remoto.
+```
+
+## Navegando en folders y archivos en Github.
+
+## Editando directamente archivos y folders en Github.
+
+## Creando nuevos archivos en Github
+
+## Creando nuevos archivos en master
+
+## Cambiando de nombre y eliminando archivos en Github
+
+## Sincronizando nuestros cambios con el repositorio local.
+
+```bash
+git fetch
+git pull
+```
+
+## Revisando los commits de la lista.
+
+Revisar las opciones de la pagina
+
+## Revisando los commits de la lista más a fondo.
+
+Revisar la historia
+
+## Revisando el repositorio en un commit particular.
+
+## Usando Commit IDs con el repo local.
+
+```bash
+git show <sha1 del commit>
+```
+
+# Github repo branches
+
