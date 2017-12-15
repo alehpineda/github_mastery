@@ -377,8 +377,120 @@ Revisar la historia
 ## Usando Commit IDs con el repo local.
 
 ```bash
-git show <sha1 del commit>
+git show <sha1 del commit> # Mostrara el commit con un diff.
 ```
 
 # Github repo branches
 
+Crear branches en github y como conviven local y remotamente.
+
+## Creando branches en Github
+
+## Creando branches locales y mandandolas a Github
+
+```bash
+git status # Checar status
+git checkout -b <nombre de branch> # crear branch
+git rm <nombre archivo> # Remover archivo y mandar cambio al stage.
+git commit -m "mensaje" # Commit el cambio.
+git status # Checar que todo esta bien.
+git push -u origin <nombre del branch> # Mandar el branch al remoto.
+```
+
+## Comparando branches y pull request.
+
+Darle pull request al branch en Github.
+
+## Merge local
+
+```bash
+git checkout master # Cambiar al branch master.
+git status # checar que todo este bien.
+git pull # Jalar los cambios del remoto al local.
+git merge <nombre del brach> # Hacer merge de los cambios del branch al master.
+git push # mandar los cambios del local al remoto.
+git branch -a # Checar todos los branch que hay, remoto y local.
+git branch -d <nombre del branch> # Elimina el branch local.
+git fetch -p # Opcion p es prune. Elimina las referencias remotas.
+```
+
+## Cambiar de manera local a un branch en Github.
+
+```bash
+git fetch # Jalar todos los cambios del remoto. Incluyen nuevos branches.
+git branch -a # Muestra los nuevos branches, local y remoto.
+git checkout <nombre del branch> # Cambiar al branch nuevo
+# Editamos un archivo
+git commit -am "mensaje" # Flash commit.
+git push # Git entiende que es un push remoto y busca la rama remota que se llame igual a la local.
+```
+
+## Limpieza. Eliminando Branches y Referencias.
+
+Estando en un branch diferente a master
+
+```bash
+git status # Todo normal. Si hiciera un pull. Solo jalo lo que hay en en branch.
+git checkout master # Cambio a master. Si hago un pull, solo trae lo que hay en master.
+git pull --all # Se trae todos los cambios de todos los branches y referencias.
+git merge <nombre del branch> # Juntar las ramas.
+git status # Nos dice que hay diferencias entre local y remoto.
+git push # Manda los cambios del local al remoto.
+git branch -a # Revisamos las referencias locales y remotas.
+git branch -d <nombre del branch> # Eliminamos branch local.
+git branch -a # El branch local se elimino. El remoto aun no.
+git push origin :<nombre del branch> # Eliminar el branch remoto.
+git branch -a # Checar las referencias. Esto puede ser utilizado en lugar del prune.
+```
+
+## Git pull con rebase
+
+Modificar un archivo en el repositorio remoto.
+Modificar un archivo en el repositorio local. Con su commit.
+
+```bash
+git fetch # jalar los cambios.
+git status # Nos va a decir que hay diferencias en el local y el remoto.
+```
+
+Con un merge y un push se arreglaria. Pero usaremos rebase para que el commit local este adelante que el remoto.
+
+```bash
+git pull --rebase # De esta manera el commit remoto se hace primero que el local.
+git hist # El ultimo comit local es el nuestro.
+git status # Vemos que el repositorio local va un commit adelante que el remoto.
+git push # Mandamos el commit local al remoto.
+```
+
+## Github graficos
+
+Desde el local
+
+```bash
+git log --oneline --graph # Nos muestra de manera grafica los commits realizados
+git hist # Un alias con varias opciones para mostrar el historico de commits.
+```
+
+## Setting the default branch en Github
+
+Crear una rama en Github, en settings ponerla de default.
+
+Esto crea cambios en todo.
+
+Si hacemos un clone, traera la rama que esta default. Hay que hacer un checkout a master, si queremos esa rama.
+
+## Resolviendo conflictos mientras hacemos un pull
+
+Hacemos modificaciones a un mismo archivo de manera remota, y de manera local.
+
+```bash
+git pull # Mostrara un merge conflict.
+git mergetool # Herramienta para arreglar estos conflictos.
+git commit -m "mensaje" # Commit con los archivos arreglados.
+rm *.orig # eliminar archivos *.orig.
+git push # mandar los cambios locales al remoto.
+```
+
+# Tags y Releases en Github
+
+## Local tags 
