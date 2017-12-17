@@ -602,3 +602,28 @@ git show v1.0 # Muestra el commit con diff del tag v1.0
 
 Los tags creados en Github son sencillos.
 
+# Comparando diferencias.
+
+Comparando diferencias con Github
+
+## Comparando con pull requests.
+
+En la pagina de pull requests. Creando una nueva pull request.
+
+## Comparando commits.
+
+En cada commit se puede ver un diff. Tambien se puede copiar el sha y meterlo en la pagina de pull request.
+
+## Comparando Tags.
+
+En la pagina de pull requests.
+
+## Comparaciones avanzadas.
+
+En la pagina de pull requests. 
+<nombre de branch, tag, u otro>@{3days} - Hace tres dias.
+<nombre de branch, tag, u otro>@{2017-05-21} - Fecha especifica.
+<nombre de branch, tag, u otro>^ - Menos uno.
+<nombre de branch, tag, u otro>@{3} - 
+
+# Social Coding
