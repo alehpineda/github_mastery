@@ -360,7 +360,7 @@ git remote show origin # Ver más info sobre el repositorio remoto.
 ## Sincronizando nuestros cambios con el repositorio local.
 
 ```bash
-git fetch
+git fetch 
 git pull
 ```
 
@@ -494,3 +494,111 @@ git push # mandar los cambios locales al remoto.
 # Tags y Releases en Github
 
 ## Local tags 
+
+Crear tags dependiendo de los commits
+
+```bash
+git log --oneline # Muestra lista de los commits.
+git tag # Muestra lista de los tags de ese repositorio.
+git tag <nombre del tag> <nombre del branch> # Le pondra un tag al ultimo commit del repositorio.
+git tag unstable develop # Crear un tag llamado unstable al ultimo commit del repositorio develop.
+git tag stable master # Crear un tag llamado stable al ultimo commit del repositorio master.
+git tag # Muestra lista de tags
+git hist # Muestra historial de commits.
+```
+
+Crear tags con anotaciones.
+
+```bash
+git tag -a <version> -m "mensaje" <numero del commit> # Crear un tag con una anotacion y un mensaje.
+git tag -a v0.1-alpha -m "Release 0.1 (Alpha)" ea01602 # Crear un tag con anotacion v0.1-alpha y mensaje "Release 0.1 (Alpha)" en el commit ea01602
+git tag # listar los tags
+git show <nombre del tag> # Muestra el commit con diff usando el nombre del tag.
+git tag -a v0.2-alpha -m "Release 0.2 (Alpha)" f1a6d94 # Crear un tag con anotacion v0.2-alpha y mensaje "Release 0.2 (Alpha)" en el commit f1a6d94
+git tag -a v0.3-beta -m "Release 0.3 (Beta)" 7fc1fe4 # Crear un tag con anotacion y mensaje en el commit.
+git hist # Mostrar historial.
+```
+
+## Tags locales en Github
+
+Mandar Tags locales a Github
+
+```bash
+git pull # Jalar cambios del remoto al local.
+git push # Mandar cambios del local al remoto.
+git push origin <nombre del tag> # Empujar tag especifica al repositorio remoto.
+git push origin stable # Empuja al remoto el tag stable.
+git push --tags # Empuja todos los tags al remoto.
+```
+
+## Tags directamente en Github.
+
+## Eliminando tags en Github.
+
+Se elimina directamente en la pagina.
+
+Ahora sincronizamos los cambios.
+
+```bash
+git status
+git tag
+git fetch -p 
+git tag -d <nombre del tag>
+git tag
+```
+
+Eliminar tags locales y empujar los cambios al remoto.
+
+```bash
+git tag -d <nombre del tag>
+git push origin :<nombre del tag>
+```
+
+## Actualizando Tags. Creando Tags flotantes.
+
+Editamos un archivo.
+
+```bash
+git status
+git commit -am "mensaje"
+git push
+git log --oneline --decorate
+git tag -f <nombre del tag> <numero de commit> # Actualizar tags.
+git log --oneline --decorate
+git push
+git pull
+git push origin develop
+git push origin unstable
+git push --force origin unstable # Se puede pero no se recomienda
+```
+
+## Iniciando un Release en Github.
+
+Release vs Tags.
+
+Todo es en Linea
+
+## Eliminando un Release en Github.
+
+Desde Github.
+Si se elimina un release, no se elimina el tag.
+Hay que eliminar el tag tambie.
+
+## Creando un Release desde Cero
+
+Desde Github.
+
+Crear un Release crea un Tag asociado.
+
+Jalar cambios al local.
+
+```bash
+git checkout master # Cambio a master
+git tag # Muestra los tags en el local
+git pull # Jalar los cambios de remoto a local
+git tag # Muestra los nuevos tags.
+git show v1.0 # Muestra el commit con diff del tag v1.0
+```
+
+Los tags creados en Github son sencillos.
+
