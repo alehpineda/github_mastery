@@ -627,3 +627,54 @@ En la pagina de pull requests.
 <nombre de branch, tag, u otro>@{3} - 
 
 # Social Coding
+
+## Copiando utilizando forkings en Github.
+
+Escoger un proyecto en Github y darle al boton de fork.
+
+## Creado un branch en mi fork.
+
+```bash
+git clone <nombre del repositorio> # Clonando un repositorio forkeado previamente.
+cd <nombre del branch> # Entramos al folder
+git status # Checar status del repo
+git checkout -b <nombre del branch> # Creamos un branch nuevo.
+code <archivo a modificar> # Modificamos un archivo
+git status # Checamos status del repo
+git commit -am "mensaje" # Flash commit.
+git push -u origin feature-readme # Empujamos los cambios y el nuevo branch al remoto.
+```
+
+Checar cambios en Github.
+
+## Pull requests.
+
+Desde la nueva rama con los cambios se pueden hacer un pull request.
+Como es un fork se unira al repo original.
+
+## Actualizando Pull requests.
+
+Todo desde Github.
+Agregar más info al pull request.
+
+Si se hacen más commits estos entran al pull request.
+
+## Aceptando Pull Requests.
+
+Desde github. Tienes que tener permiso de escritura.
+
+## Github graphs
+
+Desde Github en Insights. Muchas opciones y graficos.
+
+## Sincronizar cambios en mi fork.
+
+No hay manera directa.
+Lo mas recomendable es agregar un nuevo repo remoto con el proyecto original.
+
+## Enlistar ayuda con colaboradores.
+
+Desde Github puedes agregar a otros usuarios a tu repo.
+
+# Github Issues.
+
