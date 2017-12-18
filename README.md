@@ -678,3 +678,77 @@ Desde Github puedes agregar a otros usuarios a tu repo.
 
 # Github Issues.
 
+## Introduccion
+
+Que son los issues, como funcionan con las pull request, que son los labels, y que son los milestones.
+
+## Issue labels
+
+Hay varios tipos.
+Escoger el que más acomode al proyecto.
+Crear nuevas si el proyecto lo requiere.
+
+## Milestones
+
+Son metas, se crean desde Github.
+
+## Creando Issues
+
+En Github se hace. 
+Existen varias opciones para hacer el issue lo más explicito posible.
+
+## Cerrando Issues
+
+Desde el menu de issues, se pueden cerrar con los comentarios.
+
+## Asociando Issues con Commits.
+
+Puedes cerrar issues con commits usando una sintaxis especial en los commits.
+
+```bash
+git status # Checar que todo este normal.
+git checkout <nombre del branch> # Cambiar al branch requerido.
+git pull # Actualizar el local con el remoto.
+code <nombre del archivo> # Editar el archivo.
+git add . # Agregar al staging los cambios.
+git commit -m "mensaje, close #<numero del issue>" # Commit con close.
+git push # Mandar los cambios locales al remoto.
+```
+
+## Usando menciones con Issues.
+
+Puedes ir a commits anteriores y en un comentario referenciar un issue.
+
+## Proyectos.
+
+Una opcion para usar un Kanban automatizado. Existen varias opciones interesantes.
+
+# Github Gists
+
+## Que son?
+
+Compartir snippets de codigo.
+
+## Creando Gist
+
+Hay publicos o privados.
+
+## Trabajando con Gist locales
+
+Se copian igual que un Git.
+
+```bash
+git clone <direccion del gist> <nombre del folder> # Si no se especifica Git le dara un nombre default
+```
+
+## Compartiendo Gist
+
+Se puede usar la direccion del Gist ya que es unica.
+
+## Eliminando Gist
+
+Se elimina desde el sitio.
+Si tenemos una copia local, eliminarla.
+
+# Organizaciones Github
+
