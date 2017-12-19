@@ -752,3 +752,74 @@ Si tenemos una copia local, eliminarla.
 
 # Organizaciones Github
 
+## Crear una organizacion.
+
+En el sitio.
+Escoger el plan gratis.
+
+## Transferir un repo personal a la organizacion
+
+En el sitio, en las opciones del repo personal.
+
+## Fork del repo de la organizacion al mio.
+
+Desde la organizacion hacer un fork al repo personal.
+
+## Actualizando las referencias remotas en el repo local
+
+```bash
+git remote add <nombre de la referencia> <direccion del git> # Agregar una referencia remota.
+git fetch --all # Jalar todas las referencias.
+```
+
+## Branches y confucion.
+
+```bash
+git branch -a # mostrar las branches locales. 
+git fetch --all # jalar todos las referencias.
+git checkout -b <nombre del branch> <nombre referencia>/<nombre del branch> # Manera de llamar un branch si tenemos varias referencias con el mismo nombre de branch.
+```
+
+## Organizaciones y cuentas personales.
+
+Diferencias entre una cuenta de organizacion y una personal.
+
+## Trabajando con equipos
+
+Crear un nuevo equipo.
+Agregar gente al equipo.
+
+## Permisos de los equipos.
+
+Editar permisos.
+Agregar repositorios.
+Editar permisos del repositorio.
+Leer, escribir, admin. Tipos de permisos.
+
+## Administrando los equipos
+
+Puedes crear diferentes equipos con diferentes responsabilidades y permisos de acuerdo a las necesidades.
+
+## Perfil de la organizacion.
+
+Actualizar el perfil de la organizacion.
+Agregar los datos faltantes.
+
+Permisos default de los repositorios.
+
+none, read, write, admin.
+
+## Acciones destructivas.
+
+Cambiar nombre de las organizaciones.
+Cambiar nombre de la cuenta.
+Borrar equipos
+Borrar organizaciones
+Borrar repositorios
+Borrar la cuenta.
+
+## Review y siguientes pasos
+
+Resumen de lo visto.
+
+Unirse o apoyar proyectos en Github.
